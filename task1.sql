@@ -34,7 +34,7 @@ insert into task(usr_id,domain,todo_prob,adate) values(1,'arrays',3,'2021-09-06'
 (1,'numbers',13,'2021-09-03'),(2,'numbers',63,'2021-09-03'),(3,'numbers',93,'2021-09-03'),(4,'numbers',73,'2021-09-03'),(5,'numbers',76,'2021-09-03');
 
 /* 3.get number problems solved in codekata by combining the users */
-select u.usr_name,sum(c.sol_prob) from user1 u,codekata c where u.usr_id=c.usr_id group by u.usr_id;
+select u.usr_name,c.sol_prob from user1 u,codekata c where u.usr_id=c.usr_id and c.domain='numbers';
 
 /* 4. display the no of company drives attended by a user */
 select u.usr_name,count(c.comp_name) from user1 u,comp_drive c where u.usr_id=c.usr_id group by u.usr_id;
